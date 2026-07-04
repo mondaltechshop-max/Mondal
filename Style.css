@@ -1,0 +1,368 @@
+/* ==========================================================================
+   1. CORE VARIABLES & RESET (Modern Tech Theme)
+   ========================================================================== */
+:root {
+    --bg-main: #0b0f19;       /* Deep slate/midnight background */
+    --bg-card: #141b2d;       /* High-contrast card background */
+    --bg-nav: rgba(11, 15, 25, 0.85); /* Blurred glass nav effect */
+    --border-color: #222f47;  /* Clean, crisp circuit-like borders */
+    --text-main: #f1f5f9;     /* Ultra-bright white prose */
+    --text-muted: #94a3b8;    /* Clean gray for secondary text */
+    --accent-blue: #3b82f6;   /* Schematic blue theme */
+    --accent-green: #22c55e;  /* Success/Activation green */
+    --whatsapp-green: #25d366;/* Authentic WhatsApp green */
+    --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. STICKY GLASS NAVBAR
+   ========================================================================== */
+.navbar {
+    background-color: var(--bg-nav);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   3. HERO SECTION (High-Tech Gradient Accent)
+   ========================================================================== */
+.hero {
+    padding: 120px 0 90px;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+.badge {
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--accent-blue);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+/* ==========================================================================
+   4. BUTTONS & ACTIONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    opacity: 0.95;
+}
+
+.card-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.whatsapp-btn {
+    background-color: var(--whatsapp-green);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    background-color: #22c05b;
+}
+
+/* ==========================================================================
+   5. PRODUCT CATALOGUE & CARDS
+   ========================================================================== */
+.section {
+    padding: 100px 0;
+}
+
+.alt-bg {
+    background-color: #0e1422;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: -0.03em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.card.highlighted {
+    border-color: var(--accent-blue);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+}
+
+.card-header h3 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.tagline {
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.features li {
+    margin-bottom: 16px;
+    color: #cbd5e1;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* ==========================================================================
+   6. CONTACT, PAYMENTS & MAPS GRID
+   ========================================================================== */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.info-block {
+    margin-bottom: 32px;
+}
+
+.info-block h4 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-block p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.info-block strong {
+    color: var(--text-main);
+}
+
+/* Payment Badges */
+.payment-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.pay-tag {
+    background-color: rgba(34, 47, 71, 0.4);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    letter-spacing: 0.02em;
+}
+
+/* Location Map Box */
+.location-box {
+    background-color: var(--bg-card);
+    padding: 36px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.location-box h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.location-box p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.map-responsive {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    line-height: 0;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (FLUID MOBILE RESPONSIVENESS)
+   ========================================================================== */
+@media (max-width: 992px) {
+    h1 { font-size: 2.6rem; }
+    .contact-container { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.1rem; }
+    .hero { padding: 80px 0 60px; }
+    .section { padding: 60px 0; }
+    .card { padding: 32px 24px; }
+    .location-box { padding: 24px; }
+    .nav-links { gap: 16px; }
+}
